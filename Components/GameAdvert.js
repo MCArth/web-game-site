@@ -17,7 +17,7 @@ function GameAdvert({game}) {
                 setVideoPlaying(true);
                 try {
                     if(videoPlaying){
-                        document.getElementById('test').style.transform = 'scale(1.5,1.5)';
+                        document.getElementById('test').style.transform = 'scale(1.5,1.45)';
                     }
                 } catch(e) {
                     console.log(e);
