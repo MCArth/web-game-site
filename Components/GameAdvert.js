@@ -11,8 +11,19 @@ function GameAdvert({game}) {
 
     return (
         <div className="GameDiv"
-            onMouseEnter={() => setVideoPlaying(true)}
-            onMouseLeave={() => setVideoPlaying(false)}
+            onMouseOverCapture={() => {
+                setVideoPlaying(true);
+                try {
+                    if(videoPlaying){
+                        document.getElementById('test').style.transform = 'scale(1.5,1.5)';
+                    }
+                } catch(e) {
+                    console.log(e);
+                } 
+            }}
+            onMouseLeave={() => {
+                setVideoPlaying(false);
+            }}
         > 
             {!videoPlaying &&
                 <Image
@@ -23,14 +34,15 @@ function GameAdvert({game}) {
                     height={advertHeight}
                 />
             }
-            {videoPlaying && 
+            {videoPlaying &&
                 <video 
                     className="GameAdvertVideo"
+                    id='test'
                     src={`/${gameList[game].video}`}
                     autoPlay
-                    loop='true'
-                    playsInline='true'
-                    preload='auto'
+                    muted
+                    loop
+                    preload='none'
                     width={advertWidth}
                     height={advertHeight}
                 />
@@ -43,9 +55,13 @@ function GameAdvert({game}) {
                         border-radius: 10px;
                     }
                     .GameAdvertVideo {
-                        width: 275;
-                        height: 157;
-                        border-radius: 10px;
+                            width: 275;
+                            height: 157;
+                            border-radius: 1px;
+                            transition: all 0.25s;
+                            transform: scale(1.2,1.1);
+                            z-index: 1000;
+                            position:relative;
                     }
                     .GameDiv {
                         margin: 5px;
