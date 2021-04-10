@@ -1,11 +1,15 @@
 import GameAdvert from '../Components/GameAdvert';
 import Link from 'next/link'
 
+var linkToGame = "https://www.gameflare.com/embed/the-island-survival/";
+var nameOfGame = "The Island Survival";
+var DescriptionOfGame = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida enim nulla, efficitur pharetra lorem semper vel. Duis eu convallis est, vitae facilisis arcu. Nulla quis lectus eu massa tristique auctor quis quis sem. Nunc nunc orci, pharetra ut vestibulum at, mattis in lorem. In augue neque, pretium eu sem in, efficitur egestas nulla. Sed condimentum eget est vitae placerat. In efficitur fermentum libero in imperdiet. Aliquam dolor ipsum, ultrices at tempor ac, interdum sit amet orci. Nullam eget purus ac velit semper lobortis. Aenean accumsan odio ut nisi fringilla, dignissim auctor est placerat. Sed scelerisque nunc nec pellentesque convallis. Phasellus blandit ornare enim vitae commodo. Vivamus non consequat lorem, a finibus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent pellentesque pulvinar enim, eget maximus massa luctus non. Morbi maximus facilisis neque, a efficitur massa malesuada ac. Maecenas imperdiet purus purus, vel rutrum mauris fringilla ut. Donec et scelerisque elit. Fusce malesuada est at lacus auctor, et pellentesque nibh cursus. Nunc dui nisl, sagittis a lorem id, iaculis vulputate odio. In magna tellus, tincidunt quis erat vel, auctor fringilla orci. Proin nec vehicula felis.";
+
 function gamepage() {
 
 
   return (
-    <div className="GamePage" style={{ minHeight: '100vh' }}>
+    <div className="GamePage" >
       <div className="HeaderDiv">
         <div className="Header">
           Mine and Craft Games
@@ -27,9 +31,6 @@ function gamepage() {
           <SelectedGame />
           <MoreGames />
       </div>
-      <div className="info">
-        <h1>info about game here::</h1>
-      </div>
       <style jsx>
           {`
               div {
@@ -41,17 +42,11 @@ function gamepage() {
                   width: 100%;
                   font-size: 50px;
                   text-align: center;
-                  margin-bottom: 30px;
-                  margin-top: 20px;
               }
               .ContentDiv {
                   display: grid;
                   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                   grid-gap: 20px;
-              }
-              .info {
-                padding-top: 40px;
-                text-align: center;
               }
           `}
       </style>
@@ -61,21 +56,28 @@ function gamepage() {
 
 
 function SelectedGame({}) {
+
+  // TODO: Resize game if decreasing width
+  // TODO: Hide sidebars if it's getting cramped
   
   return (
       <div className="SelectedGameContainer">
           <div className="SelectedGameHeader">
-              [Name Of Game]
+              {nameOfGame}
           </div>
           <div className="SelectedGameBox">
 
-            <iframe src="https://www.gameflare.com/embed/the-island-survival/" left="0" frameBorder="0" scrolling="no" width="1000" height="635" allowFullScreen></iframe>
+            <iframe src={linkToGame} left="0" frameBorder="0" scrolling="no" width="1200" height="660" allowFullScreen></iframe>
 
+          </div>
+          <div className="game-description">
+            <h1>Information about {nameOfGame}: </h1>
+            <a>{DescriptionOfGame}</a>
           </div>
           <style jsx>
               {`
                   .SelectedGameContainer {
-                      min-width: 300px;
+                      min-width: 800px;
                       justify-content: center;
                       position: center;
                   }
@@ -86,6 +88,12 @@ function SelectedGame({}) {
                       text-align: center;
                       font-size: 30px;
                       margin-bottom: 20px;
+                  }
+                  .game-description {
+                    position: center;
+                    text-align: center;
+                    padding-top: 60px;
+                    padding-bottom: 120px;
                   }
               `}
           </style>
