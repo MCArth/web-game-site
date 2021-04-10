@@ -35,6 +35,9 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
             onMouseOverCapture={() => {
                 if(!mouseIn){
                     onEnter(game);
+                    try {
+                    document.getElementById('test').style.transform = 'scale(1.5,1.45)';
+                    } catch(e) {console.log(e)}
                     mouseIn = true;
                 }
             }}
@@ -58,6 +61,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                 <video 
                     className="GameAdvertVideo"
                     src={`/${gameList[game].video}`}
+                    id='test'
                     autoPlay
                     muted
                     loop
@@ -79,8 +83,6 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                             border-radius: 1px;
                             z-index: 1000;
                             position:relative;
-                            ${game!==selectedGame && 'transform: scale(1.2,1.1);'}
-                            ${game===selectedGame && 'transform: scale(1.5,1.45);'}
                             transition: all 0.25s;
                     }
                     .GameDiv {
