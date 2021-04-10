@@ -80,12 +80,18 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                     .GameAdvertVideo {
                             width: 275;
                             height: 157;
-                            border-radius: 1px;
+                            border-radius: 10px;
                             z-index: 1000;
                             position:relative;
                             transition: all 0.25s;
+                            box-sizing: border-box;
+                            border: solid;
+                            border-color: #21C59D;
+                            background-color: #000000;
                     }
                     .GameDiv {
+                        width: 275;
+                        height: 157;
                         margin: 5px;
                     }
                 `}
