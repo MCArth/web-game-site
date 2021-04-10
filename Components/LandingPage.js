@@ -55,6 +55,11 @@ function LandingPage({ Component, pageProps }) {
 
 function PopularGames({minWidth}) {
     const games = new Array(50).fill('BloxdHop')
+
+    games[0] = ('BloxdHop');
+    games[1] = ('IslandSurvival');
+    games[2] = ('MineBox');
+
     return (
         <div className="PopularGames">
             <div className="PopularGamesHeader Title">
