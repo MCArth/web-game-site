@@ -1,34 +1,50 @@
-import gameList from '../GameList.json'
 import GameAdvert from './GameAdvert';
+import Description from './Description';
+import { useWindowSize } from './hooks'
 
 function LandingPage({ Component, pageProps }) {
+    const {width: windowWidth} = useWindowSize()
+
+    const minContentWidth = 320;
     return <div className="LandingPage">
-        <div className="HeaderDiv">
+        <div className="HeaderDiv Title">
             <div className="Header">
-                Mine and Craft Games
+                Mine and Craft Games .com
             </div>
         </div>
         <div className="ContentDiv">
-            <PopularGames />
-            <NewGames />
+            <PopularGames minWidth={minContentWidth} />
+            <NewGames minWidth={minContentWidth} />
         </div>
-        <style jsx>
+        <Description />
+        <style jsx global>
             {`
+                @font-face {
+                    font-family: pixel-font;
+                    src: url('/PixelIntv-OPxd.ttf');
+                }
+                .Title {
+                    font-family: pixel-font;
+                }
                 div {
                     color: white;
                     text-align: center;
+                }
+                .LandingPage {
                 }
                 .HeaderDiv {
                     width: 100%;
                     font-size: 50px;
                     text-align: center;
-                    margin-bottom: 30px;
-                    margin-top: 20px;
+                    padding-bottom: 20px;
+                    margin-bottom: 40px;
+                    padding-top: 20px;
+                    background-color: #1B1B1B;
                 }
                 .ContentDiv {
                     display: flex;
                     justify-content: center;
-                    {/* flex-wrap: wrap; */}
+                    flex-wrap: ${windowWidth && document.body.clientWidth >= minContentWidth*2 ? "" : "wrap"};
                 }
             `}
         </style>
@@ -37,12 +53,11 @@ function LandingPage({ Component, pageProps }) {
 
 
 
-function PopularGames({}) {
+function PopularGames({minWidth}) {
     const games = new Array(50).fill('BloxdHop')
-    console.log(games)
     return (
         <div className="PopularGames">
-            <div className="PopularGamesHeader">
+            <div className="PopularGamesHeader Title">
                 Popular Games
             </div>
             <div className="PopularGamesAdverts">
@@ -56,7 +71,13 @@ function PopularGames({}) {
             <style jsx>
                 {`
                     .PopularGames {
-                        min-width: 300px;
+                        min-width: ${minWidth}px;
+                        background-color: var(--primaryShaded1);
+                        padding: 5px;
+                        padding-top: 20px;
+                        margin: 10px;
+                        border-radius: 10px;
+                        height: fit-content;
                     }
                     .PopularGamesAdverts {
                         display: flex;
@@ -75,12 +96,11 @@ function PopularGames({}) {
     )
 }
 
-function NewGames({}) {
+function NewGames({minWidth}) {
     const games = new Array(10).fill('BloxdHop')
-    console.log(games)
     return (
         <div className="NewGames">
-            <div className="NewGamesHeader">
+            <div className="NewGamesHeader Title">
                 New games
             </div>
             <div className="NewGamesAdverts">
@@ -94,7 +114,13 @@ function NewGames({}) {
             <style jsx>
                 {`
                     .NewGames {
-                        min-width: 300px;
+                        min-width: ${minWidth}px;
+                        background-color: var(--primaryShaded1);
+                        padding: 10px;
+                        border-radius: 10px;
+                        margin: 10px;
+                        margin-left: 0;
+                        height: fit-content;
                     }
                     .NewGamesAdverts {
                         display: flex;
@@ -109,6 +135,7 @@ function NewGames({}) {
         </div>
     )
 }
+
   
 export default LandingPage
   
