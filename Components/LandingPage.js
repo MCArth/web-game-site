@@ -27,12 +27,15 @@ function LandingPage({ Component, pageProps }) {
 
 
 function PopularGames({minWidth}) {
-    const games = new Array(50).fill('BloxdHop');
+    const games = new Array(50).fill('Default');
     const adState = useAdState();
 
     games[0] = ('BloxdHop');
     games[1] = ('IslandSurvival');
     games[2] = ('MineBox');
+    games[3] = ('BlockWorld');
+    games[4] = ('MineClone');
+    games[5] = ('MineCraftIO');
 
     return (
         <div className="PopularGames">

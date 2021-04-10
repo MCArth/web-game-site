@@ -30,21 +30,10 @@ function gamepage({game}) {
 
 	return (
 		<div className="GamePage" >
-			{/* <div className="SearchBar">
-			<input placeholder={"Search for a game.."} />
-				<button type="submit">Search</button>
-			</div>
-			<div className="goto-homepage">
-			<button>
-				<Link href="/">
-				Go Back to the Homepage
-				</Link>
-			</button>
-			</div> */}
 		<div className="ContentDiv" >
 			{/* todo make this better based on numEle */}
 			{numEleGameRow === 3 ? (<>
-				<AdverticementLeft/>
+				<AdvertisementLeft/>
 				<SelectedGame game={game} />
 				<MoreGames/></>) : 
 				<SelectedGame game={game} />}
@@ -89,7 +78,6 @@ function SelectedGame({game}) {
 			</div>
 			<div className="game-description">
 				<h1>Information about {gameList[game].title}: </h1>
-				<h3>Struggling to give it a max-width so it doesnt overlap</h3>
 				<p>{gameList[game].desc}</p>
 			</div>
 			<div className="BathHack">
@@ -132,7 +120,7 @@ function SelectedGame({game}) {
 
 function MoreGames({}) {
 	const games = new Array(6).fill('BloxdHop')
-  const adState = useAdState();
+  	const adState = useAdState();
 	return (
 		<div className="MoreGames">
 			<div className="MoreGamesHeader">
@@ -143,7 +131,7 @@ function MoreGames({}) {
 					return <GameAdvert
 						key={idx}
 						game={game}
-            adState={adState}
+            			adState={adState}
 					/>
 				})}
 			</div>
@@ -176,7 +164,7 @@ function MoreGames({}) {
 	)
 }
 
-function AdverticementLeft(){
+function AdvertisementLeft(){
   
 	return (
 		<div className="Ad">
@@ -185,6 +173,8 @@ function AdverticementLeft(){
 				{`
 					.Ad {
 					min-width: 100px;
+					position: absolute;
+					left: 14px;
 					padding-left: 10px;
 
 					background-color: var(--primaryShaded1);
