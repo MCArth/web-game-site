@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import gameList from '../GameList.json'
 import React, { useState } from 'react';
+import Link from 'next/link'
 
 function GameAdvert({game}) {
 
@@ -10,6 +11,7 @@ function GameAdvert({game}) {
     const advertHeight = 157;
 
     return (
+    <Link href={`/${encodeURIComponent(game)}`} >
         <div className="GameDiv"
             onMouseOverCapture={() => {
                 setVideoPlaying(true);
@@ -69,6 +71,7 @@ function GameAdvert({game}) {
                 `}
             </style>
         </div>
+    </Link>
     )
 }
 
