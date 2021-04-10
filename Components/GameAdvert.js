@@ -38,6 +38,11 @@ function GameAdvert({game}) {
                         height: 157;
                         border-radius: 10px;
                     }
+                    .GameAdvertVideo {
+                        width: 275;
+                        height: 157;
+                        border-radius: 10px;
+                    }
                     .GameDiv {
                         margin: 5px;
                     }
