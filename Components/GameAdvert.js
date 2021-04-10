@@ -27,6 +27,10 @@ function GameAdvert({game}) {
                 <video 
                     className="GameAdvertVideo"
                     src={`/${gameList[game].video}`}
+                    autoPlay
+                    loop='true'
+                    playsInline='true'
+                    preload='auto'
                     width={advertWidth}
                     height={advertHeight}
                 />
