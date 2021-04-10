@@ -1,6 +1,6 @@
 import GameAdvert from './GameAdvert';
 import Description from './Description';
-import { useWindowSize } from './hooks'
+import { useWindowSize, useAdState } from './hooks'
 
 function LandingPage({ Component, pageProps }) {
     const {width: windowWidth} = useWindowSize()
@@ -54,15 +54,12 @@ function LandingPage({ Component, pageProps }) {
 
 
 function PopularGames({minWidth}) {
-    const games = new Array(50).fill('Default')
+    const games = new Array(50).fill('BloxdHop');
+    const adState = useAdState();
 
-    // Need a way to loop through and add all existing games from GameList.json
     games[0] = ('BloxdHop');
     games[1] = ('IslandSurvival');
     games[2] = ('MineBox');
-    games[3] = ('BlockWorld');
-    games[4] = ('MineClone');
-    games[5] = ('MineCraftIO');
 
     return (
         <div className="PopularGames">
@@ -74,6 +71,7 @@ function PopularGames({minWidth}) {
                     return <GameAdvert
                         key={idx}
                         game={game}
+                        adState={adState}
                     />
                 })}
             </div>
@@ -107,6 +105,7 @@ function PopularGames({minWidth}) {
 
 function NewGames({minWidth}) {
     const games = new Array(10).fill('BloxdHop')
+    const adState = useAdState();
     return (
         <div className="NewGames">
             <div className="NewGamesHeader Title">
@@ -117,6 +116,7 @@ function NewGames({minWidth}) {
                     return <GameAdvert
                         key={idx}
                         game={game}
+                        adState={adState}
                     />
                 })}
             </div>

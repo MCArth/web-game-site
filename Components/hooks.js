@@ -25,3 +25,13 @@ export function useWindowSize() {
     }, []); // Empty array ensures that effect is only run on mount
     return windowSize;
 }
+
+export function useAdState() {
+  const [selectedGame, setSelectedGame] = useState(null);
+
+  function onEnter(newSelectedGame) {
+    setSelectedGame(newSelectedGame);
+  }
+
+  return [onEnter, selectedGame];
+}

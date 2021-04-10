@@ -153,6 +153,7 @@ function SelectedGame({game}) {
 
 function MoreGames({}) {
   const games = new Array(6).fill('BloxdHop')
+  const adState = useAdState();
   return (
       <div className="MoreGames">
           <div className="MoreGamesHeader">
@@ -163,6 +164,7 @@ function MoreGames({}) {
                   return <GameAdvert
                       key={idx}
                       game={game}
+                      adState={adState}
                   />
               })}
           </div>

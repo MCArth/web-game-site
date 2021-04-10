@@ -3,16 +3,22 @@ import gameList from '../GameList.json'
 import React, { useState } from 'react';
 import Link from 'next/link'
 
-function GameAdvert({game}) {
-
-    const [videoPlaying, setVideoPlaying] = useState(false);
+function GameAdvert({game, adState:[onEnter, selectedGame]}) {
 
     const advertWidth = 275;
     const advertHeight = 157;
     var mouseIn = false;
 
+    console.log(game===selectedGame);
+
+    /*
+    if(game===selectedGame){
+        expandVideo();
+    }
+    */
+
+    /*
     function expandVideo(){
-        setVideoPlaying(true);
         try {
             if(videoPlaying){
                 document.getElementById('test').style.transform = 'scale(1.5,1.45)';
@@ -21,28 +27,25 @@ function GameAdvert({game}) {
             console.log(e);
         }
     }
-
-    function collapseVideo(){
-        setVideoPlaying(false);
-    }
+    */
 
     return (
     <Link href={`/${encodeURIComponent(game)}`} >
         <div className="GameDiv"
             onMouseOverCapture={() => {
                 if(!mouseIn){
-                    expandVideo();
-                mouseIn = true;
-            }
+                    onEnter(game);
+                    mouseIn = true;
+                }
             }}
             onMouseLeave={() => {
                 if(mouseIn){
-                    collapseVideo();
-                mouseIn = false;
+                    onEnter(null);
+                    mouseIn = false;
                 }
             }}
         > 
-            {!videoPlaying &&
+            {game!==selectedGame &&
                 <Image
                     className="GameAdvertImage"
                     src={`/${gameList[game].image}`}
@@ -51,10 +54,9 @@ function GameAdvert({game}) {
                     height={advertHeight}
                 />
             }
-            {videoPlaying &&
+            {game===selectedGame &&
                 <video 
                     className="GameAdvertVideo"
-                    id='test'
                     src={`/${gameList[game].video}`}
                     autoPlay
                     muted
@@ -75,10 +77,11 @@ function GameAdvert({game}) {
                             width: 275;
                             height: 157;
                             border-radius: 1px;
-                            transition: all 0.25s;
-                            transform: scale(1.2,1.1);
                             z-index: 1000;
                             position:relative;
+                            ${game!==selectedGame && 'transform: scale(1.2,1.1);'}
+                            ${game===selectedGame && 'transform: scale(1.5,1.45);'}
+                            transition: all 0.25s;
                     }
                     .GameDiv {
                         margin: 5px;
