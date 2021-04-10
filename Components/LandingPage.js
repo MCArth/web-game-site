@@ -7,11 +7,6 @@ function LandingPage({ Component, pageProps }) {
 
     const minContentWidth = 315;
     return <div className="LandingPage">
-        <div className="HeaderDiv Title">
-            <div className="Header">
-                Mine and Craft Games .com
-            </div>
-        </div>
         <div className="ContentDiv">
             <PopularGames minWidth={minContentWidth} />
             <NewGames minWidth={minContentWidth} />
@@ -19,28 +14,6 @@ function LandingPage({ Component, pageProps }) {
         <Description />
         <style jsx global>
             {`
-                @font-face {
-                    font-family: pixel-font;
-                    src: url('/PixelIntv-OPxd.ttf');
-                }
-                .Title {
-                    font-family: pixel-font;
-                }
-                div {
-                    color: white;
-                    text-align: center;
-                }
-                .LandingPage {
-                }
-                .HeaderDiv {
-                    width: 100%;
-                    font-size: 50px;
-                    text-align: center;
-                    padding-bottom: 20px;
-                    margin-bottom: 40px;
-                    padding-top: 20px;
-                    background-color: #1B1B1B;
-                }
                 .ContentDiv {
                     display: flex;
                     justify-content: center;
