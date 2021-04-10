@@ -13,7 +13,7 @@ var gameWidth = 1200;
 var sideBar = 320;
 var visible = true;
 
-function gamepage() {
+function gamepage({game}) {
   const {width: windowWidth} = useWindowSize();
 
   // NEED MORE EFFICIENT WAY OF DOING THIS
