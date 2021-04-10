@@ -57,8 +57,7 @@ function SelectedGame({}) {
               [Name Of Game]
           </div>
           <div className="SelectedGameBox">
-            <iframe src="https://www.gameflare.com/online-game/cartoon-strike/" style={{
-              width: '800px', height: '600px', border: '0px', left: '400px'}}></iframe>
+            <iframe src="https://www.gameflare.com/embed/cartoon-strike/" frameborder="0" scrolling="no" width="1000" height="635" allowfullscreen></iframe>
 
           </div>
           <style jsx>
