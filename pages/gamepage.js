@@ -1,6 +1,4 @@
-import gameList from '../GameList.json'
 import GameAdvert from '../Components/GameAdvert';
-import TopHeader from '../Components/header';
 import Link from 'next/link'
 
 function gamepage() {
@@ -54,27 +52,25 @@ function gamepage() {
 function SelectedGame({}) {
   const games = new Array(1).fill('BloxdHop')
   return (
-      <div className="SelectedGame">
+      <div className="SelectedGameContainer">
           <div className="SelectedGameHeader">
               [Name Of Game]
           </div>
-          <div className="SelectedGameAdverts">
-              {games.map((game, idx) => {
-                  return <GameAdvert
-                      key={idx}
-                      game={game}
-                  />
-              })}
+          <div className="SelectedGameBox">
+            <iframe src="https://www.gameflare.com/online-game/cartoon-strike/" style={{
+              width: '800px', height: '600px', border: '0px', left: '400px'}}></iframe>
+
           </div>
           <style jsx>
               {`
-                  .SelectedGame {
+                  .SelectedGameContainer {
                       min-width: 300px;
                       background-color: #333333;
-
                   }
-                  .SelectedGameAdverts {
-                      display: flex;
+                  .SelectedGameBox {
+                      display: relative;
+                      height: 400px;
+                      width: 400px;
                       flex-direction: row;
                       flex-wrap: wrap;
                       justify-content: center;
