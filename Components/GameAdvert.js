@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import gameList from '../GameList.json'
+import React, { useState } from 'react';
 
 function GameAdvert({game}) {
+
+    const [isVideo, setIsVideo] = useState(false);
+
     return (
-        <div className="GameDiv">
+        <div className="GameDiv"
+            onMouseEnter={() => setIsVideo(true)}
+            onMouseLeave={() => setIsVideo(false)}
+        > 
             <Image
                 className="GameAdvertImage"
                 src={`/${gameList[game].image}`}
@@ -11,6 +18,9 @@ function GameAdvert({game}) {
                 width={275}
                 height={157}
             />
+            {isVideo && (
+                <div>Video Playing</div>
+            )}
             <style jsx global>
                 {`
                     .GameAdvertImage {
