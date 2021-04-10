@@ -4,23 +4,25 @@ import React, { useState } from 'react';
 
 function GameAdvert({game}) {
 
-    const [isVideo, setIsVideo] = useState(false);
+    const [videoPlaying, setVideoPlaying] = useState(false);
 
     return (
         <div className="GameDiv"
-            onMouseEnter={() => setIsVideo(true)}
-            onMouseLeave={() => setIsVideo(false)}
+            onMouseEnter={() => setVideoPlaying(true)}
+            onMouseLeave={() => setVideoPlaying(false)}
         > 
-            <Image
-                className="GameAdvertImage"
-                src={`/${gameList[game].image}`}
-                alt={`Image of ${game}`}
-                width={275}
-                height={157}
-            />
-            {isVideo && (
+            {!videoPlaying &&
+                <Image
+                    className="GameAdvertImage"
+                    src={`/${gameList[game].image}`}
+                    alt={`Image of ${game}`}
+                    width={275}
+                    height={157}
+                />
+            }
+            {videoPlaying && 
                 <div>Video Playing</div>
-            )}
+            }
             <style jsx global>
                 {`
                     .GameAdvertImage {
