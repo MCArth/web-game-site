@@ -9,22 +9,37 @@ function GameAdvert({game}) {
 
     const advertWidth = 275;
     const advertHeight = 157;
+    var mouseIn = false;
+
+    function expandVideo(){
+        setVideoPlaying(true);
+        try {
+            if(videoPlaying){
+                document.getElementById('test').style.transform = 'scale(1.5,1.45)';
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    function collapseVideo(){
+        setVideoPlaying(false);
+    }
 
     return (
     <Link href={`/${encodeURIComponent(game)}`} >
         <div className="GameDiv"
             onMouseOverCapture={() => {
-                setVideoPlaying(true);
-                try {
-                    if(videoPlaying){
-                        document.getElementById('test').style.transform = 'scale(1.5,1.45)';
-                    }
-                } catch(e) {
-                    console.log(e);
-                } 
+                if(!mouseIn){
+                    expandVideo();
+                mouseIn = true;
+            }
             }}
             onMouseLeave={() => {
-                setVideoPlaying(false);
+                if(mouseIn){
+                    collapseVideo();
+                mouseIn = false;
+                }
             }}
         > 
             {!videoPlaying &&
