@@ -1,7 +1,27 @@
 {
     "BloxdHop": {
-        "title": "BloxdHop.io",
+        "title": "BloxdHop",
         "image": "bloxdhop275x157.png",
-        "video": "bloxdhopthumbnail.mp4"
+        "video": "bloxdhopthumbnail.mp4",
+        "url": "https://www.gameflare.com/embed/the-island-survival/",
+        "desc": "About this game.."
+    },
+    
+    "IslandSurvival": {
+        "title": "The Island Survival",
+        "image": "bloxdhop275x157.png",
+        "video": "bloxdhopthumbnail.mp4",
+        "url": "https://www.gameflare.com/embed/the-island-survival/",
+        "desc": "About this game.."
+    },
+
+    "MineBox": {
+        "title": "MineBox",
+        "image": "bloxdhop275x157.png",
+        "video": "bloxdhopthumbnail.mp4",
+        "url": "https://www.gameflare.com/embed/mine-box/",
+        "desc": "About this game.."
     }
+
+
 }
