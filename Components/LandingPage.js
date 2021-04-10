@@ -5,7 +5,7 @@ import { useWindowSize } from './hooks'
 function LandingPage({ Component, pageProps }) {
     const {width: windowWidth} = useWindowSize()
 
-    const minContentWidth = 320;
+    const minContentWidth = 315;
     return <div className="LandingPage">
         <div className="HeaderDiv Title">
             <div className="Header">
