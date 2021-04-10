@@ -3,7 +3,7 @@ import Link from 'next/link'
 import gameList from '../GameList.json'
 import React, { useState } from 'react';
 import Image from 'next/Image';
-import { useWindowSize } from './hooks'
+import { useWindowSize, useAdState } from './hooks'
 
 
 function gamepage({game}) {
