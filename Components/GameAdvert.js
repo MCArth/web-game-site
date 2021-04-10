@@ -6,6 +6,9 @@ function GameAdvert({game}) {
 
     const [videoPlaying, setVideoPlaying] = useState(false);
 
+    const advertWidth = 275;
+    const advertHeight = 157;
+
     return (
         <div className="GameDiv"
             onMouseEnter={() => setVideoPlaying(true)}
@@ -16,12 +19,17 @@ function GameAdvert({game}) {
                     className="GameAdvertImage"
                     src={`/${gameList[game].image}`}
                     alt={`Image of ${game}`}
-                    width={275}
-                    height={157}
+                    width={advertWidth}
+                    height={advertHeight}
                 />
             }
             {videoPlaying && 
-                <div>Video Playing</div>
+                <video 
+                    className="GameAdvertVideo"
+                    src={`/${gameList[game].video}`}
+                    width={advertWidth}
+                    height={advertHeight}
+                />
             }
             <style jsx global>
                 {`
