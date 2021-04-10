@@ -1,18 +1,25 @@
 import Image from 'next/image';
+import gameList from '../GameList.json'
 
-function GameAdvert({}) {
+function GameAdvert({game}) {
     return (
         <div className="GameDiv">
             <Image
-                src="/bloxdhop275x157.png"
+                className="GameAdvertImage"
+                src={`/${gameList[game].image}`}
+                alt={`Image of ${game}`}
                 width={275}
                 height={157}
             />
-            <style jsx>
+            <style jsx global>
                 {`
-                    p {
+                    .GameAdvertImage {
                         width: 275;
                         height: 157;
+                        border-radius: 10px;
+                    }
+                    .GameDiv {
+                        margin: 5px;
                     }
                 `}
             </style>

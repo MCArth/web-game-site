@@ -10,9 +10,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <LandingPage />
       </main>
+      <style jsx>
+        {`
+          div {
+            background-color: #333333;
+          }
+        `}
+      </style>
     </div>
   )
 }
