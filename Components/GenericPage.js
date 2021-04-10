@@ -1,7 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link';
+import React, {useState} from 'react';
 
 export default function GenericPage({title, children, headerIsClickable}) {
+
+  const [searchData, setSearchData] = useState(null);
+  const [search, setSearch] = useState(false);
+
+  function getSearchData(val){
+      setSearchData(val.target.value)
+  }
+
     return (
         <div className="root">
           <Head>
@@ -26,6 +35,12 @@ export default function GenericPage({title, children, headerIsClickable}) {
                     </div>
                 </div>
             )}
+            <div className="SearchBar">
+              <input placeholder={"Search for a game.."} type="text" onChange={getSearchData}/>
+              <Link href={`/search/${encodeURIComponent(searchData)}`}> 
+                <button type="submit" onClick={()=>setSearch(true)} >Search</button>
+              </Link>
+            </div>
             {children}
           </main>
           <style jsx global>
@@ -53,6 +68,9 @@ export default function GenericPage({title, children, headerIsClickable}) {
                 margin-bottom: 40px;
                 background-color: #1B1B1B;
                 ${headerIsClickable ? "cursor: pointer;" : ""}
+              }
+              .SearchBar {
+                padding-bottom: 20px;
               }
               {/* h1 {
                     --shadowColour: rgb(0, 120, 189);
