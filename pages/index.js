@@ -4,9 +4,9 @@ import LandingPage from '../Components/LandingPage.js'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>MineandCraftGames.com</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -18,6 +18,18 @@ export default function Home() {
           div {
             background-color: #333333;
           }
+          {/* h1 {
+                --shadowColour: rgb(0, 120, 189);
+                font-family: pixel-font;
+                text-shadow 0.1em 0.1em 0 var(--shadowColour),
+                    0.1em -0.1em 0 var(--shadowColour),
+                    -0.1em 0.1em 0 var(--shadowColour),
+                    -0.1em -0.1em 0 var(--shadowColour),
+                    0 0.1em 0 var(--shadowColour),
+                    0 -0.1em 0 var(--shadowColour),
+                    0.1em 0 var(--shadowColour),
+                    -0.1em 0 var(--shadowColour);
+            } */}
         `}
       </style>
     </div>
