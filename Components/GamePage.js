@@ -6,9 +6,6 @@ import Image from 'next/Image';
 import { useWindowSize } from './hooks'
 
 
-
-var DescriptionOfGame = "description ...";
-
 var gameWidth = 1200;
 var sideBar = 320;
 var visible = true;
@@ -92,7 +89,7 @@ function SelectedGame({game}) {
   return (
       <div className="SelectedGameContainer">
           <div className="SelectedGameHeader">
-              {game}
+              {gameList[game].title}
           </div>
           <div className="SelectedGameBox">
 
@@ -114,7 +111,7 @@ function SelectedGame({game}) {
           <div className="game-description">
             <h1>Information about {game}: </h1>
             <h3>Struggling to give it a max-width so it doesnt overlap</h3>
-            <a>{DescriptionOfGame}</a>
+            <a>{gameList[game].desc}</a>
           </div>
           <div className="BathHack">
             <Image src="/bathhack_horizontal.png" alt="me" width="1052" height="240" />
