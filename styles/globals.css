@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   --primaryShaded1: #292929;
+  overflow-x: hidden;
 }
 
 /* @font-face {

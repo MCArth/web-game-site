@@ -1,10 +1,18 @@
 import gameList from '../GameList.json'
 import GamePage from '../Components/GamePage'
+import GenericPage from './../Components/GenericPage';
 
 export default function Game({game}) {
-    return <GamePage 
-        game={game}
-    />
+    return (
+        <GenericPage 
+          title="Mine and Craft Games.com"
+          headerIsClickable={true}
+        >
+            <GamePage 
+                game={game}
+            />
+        </GenericPage>
+      )
 }
 
 export async function getStaticProps({params}) {
