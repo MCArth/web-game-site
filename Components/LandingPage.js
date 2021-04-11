@@ -86,6 +86,18 @@ function PopularGames({minWidth}) {
 function NewGames({minWidth}) {
     const games = new Array(10).fill('BloxdHop')
     const adState = useAdState();
+
+    games[0] = ('BloxdHop');
+    games[1] = ('IslandSurvival');
+    games[2] = ('MineBox');
+    games[3] = ('BlockWorld');
+    games[4] = ('MineClone');
+    games[5] = ('MineCraftIO');
+    games[6] = ('CraftNiteIO');
+    games[7] = ('KogamaSkyLand');
+    games[8] = ('MineBlocks');
+    games[9] = ('MinecraftTowerDefence');
+    
     return (
         <div className="NewGames">
             <div className="NewGamesHeader Title">
