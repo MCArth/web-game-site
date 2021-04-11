@@ -8,19 +8,29 @@ import Link from 'next/link'
 function searchResults({searchQuery}) {
     const {width: windowWidth} = useWindowSize()
 
-    const [searchData, setSearchData] = useState(null);
+    /*const [searchData, setSearchData] = useState(null);
     const [search, setSearch] = useState(false);
 
     function getSearchData(val){
         setSearchData(val.target.value)
-    }
+    }*/
 
-    // Loop through all games we have and check if searchquery is in the list
-    //if (gameList.inclues(searchQuery.toLowerCase())){
-    //    foundResults=true;
-    //    //loop through and add correct elements to array 
-    //    <h>Test</h>
-    //}
+    // TODO: Pass-through props-value and assign it to searchQuery
+
+    console.log(searchQuery);
+
+
+    var foundWord = false;
+    var searchWord = "Mine";
+    /*gameList.forEach(doc => {
+        if (doc.toLowerCase().includes(searchWord.toLowerCase())){
+            foundResult = true;
+        }
+    })*/
+
+
+
+
 
     const minContentWidth = 315;
     return <div className="LandingPage">
@@ -70,27 +80,36 @@ function searchResults({searchQuery}) {
 }
 
 function listResults({searchQuery}){
-    return (
-        <h1>{searchQuery}</h1>
-    )
+    // Loop through all games we have and check if searchquery is in the list
+    //if (gameList.inclues(searchQuery.toLowerCase())){
+    //    foundResults=true;
+    //    //loop through and add correct elements to array 
+    //    <h>Test</h>
+    //}
+    return <h1>{searchQuery}</h1>
 }
 
 
 function PopularGames({minWidth}) {
-    const games = new Array(50).fill('Default')
+    
+    var length = 9;
+    const games = new Array(length).fill('Default')
+    for (var i = 0; i < length; i++) {
+        games[i] = gameList[i+1]; //('');
+    }
 
     // Need a way to loop through and add all existing games from GameList.json
-    games[0] = ('BloxdHop');
+    /*games[0] = ('BloxdHop');
     games[1] = ('IslandSurvival');
     games[2] = ('MineBox');
     games[3] = ('BlockWorld');
     games[4] = ('MineClone');
-    games[5] = ('MineCraftIO');
+    games[5] = ('MineCraftIO');*/
 
     return (
         <div className="PopularGames">
             <div className="PopularGamesHeader Title">
-                Popular Games
+            Search results for ...
             </div>
             <div className="PopularGamesAdverts">
                 {games.map((game, idx) => {
@@ -129,7 +148,20 @@ function PopularGames({minWidth}) {
 }
 
 function MoreGames({}) {
-  const games = new Array(6).fill('BloxdHop')
+    var length = 6;
+    const games = new Array(length).fill('Default');
+    const adState = useAdState();
+    
+    var i = 0;
+    var firstRun = true;
+    for (var key of Object.keys(gameList)) {
+        if (firstRun || key==game || i>=6) {
+            firstRun = false;
+            continue;
+        }
+        games[i] = key;
+        i++;
+    }
   return (
       <div className="MoreGames">
           <div className="MoreGamesHeader">

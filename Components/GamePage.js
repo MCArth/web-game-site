@@ -35,7 +35,7 @@ function gamepage({game}) {
 			{numEleGameRow === 3 ? (<>
 				<AdvertisementLeft/>
 				<SelectedGame game={game} />
-				<MoreGames/></>) : 
+				<MoreGames game={game}/></>) : 
 				<SelectedGame game={game} />}
 		</div>
 		<style jsx global>
@@ -118,9 +118,23 @@ function SelectedGame({game}) {
 	)
 }
 
-function MoreGames({}) {
-	const games = new Array(6).fill('BloxdHop')
-  	const adState = useAdState();
+function MoreGames({game}) {
+
+	var length = 6;
+    const games = new Array(length).fill('Default');
+    const adState = useAdState();
+    
+    var i = 0;
+    var firstRun = true;
+    for (var key of Object.keys(gameList)) {
+        if (firstRun || key==game || i>=6) {
+            firstRun = false;
+            continue;
+        }
+        games[i] = key;
+        i++;
+    }
+
 	return (
 		<div className="MoreGames">
 			<div className="MoreGamesHeader">

@@ -1,6 +1,8 @@
 import GameAdvert from './GameAdvert';
 import Description from './Description';
 import { useWindowSize, useAdState } from './hooks'
+import gameList from '../GameList.json'
+
 
 function LandingPage({ Component, pageProps }) {
     const {width: windowWidth} = useWindowSize()
@@ -27,19 +29,23 @@ function LandingPage({ Component, pageProps }) {
 
 
 function PopularGames({minWidth}) {
-    const games = new Array(50).fill('Default');
-    const adState = useAdState();
 
-    games[0] = ('BloxdHop');
-    games[1] = ('IslandSurvival');
-    games[2] = ('MineBox');
-    games[3] = ('BlockWorld');
-    games[4] = ('MineClone');
-    games[5] = ('MineCraftIO');
-    games[6] = ('CraftNiteIO');
-    games[7] = ('KogamaSkyLand');
-    games[8] = ('MineBlocks');
-    games[9] = ('MinecraftTowerDefence');
+    var length = 50;
+    const games = new Array(length).fill('Default');
+    const adState = useAdState();
+    
+    var i = 0;
+    var firstRun = true;
+    for (var key of Object.keys(gameList)) {
+        if (firstRun){
+            firstRun = false;
+            continue;
+        }
+        games[i] = key;
+        i++;
+    }
+
+
 
     return (
         <div className="PopularGames">
@@ -84,8 +90,21 @@ function PopularGames({minWidth}) {
 }
 
 function NewGames({minWidth}) {
-    const games = new Array(10).fill('BloxdHop')
+    var length = 10;
+    const games = new Array(length).fill('Default');
     const adState = useAdState();
+    
+    var i = 0;
+    var firstRun = true;
+    for (var key of Object.keys(gameList)) {
+        if (firstRun){
+            firstRun = false;
+            continue;
+        }
+        games[i] = key;
+        i++;
+    }
+
     return (
         <div className="NewGames">
             <div className="NewGamesHeader Title">
