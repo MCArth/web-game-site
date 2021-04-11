@@ -131,6 +131,12 @@ function ListResults({searchQuery, minWidth}) {
         games[i] = gamesInit[i];
     }
 
+    var adId = 0;
+    function nextAdId(){
+        adId = adId + 1;
+        return adId;
+    }
+
     return (
         <div className="PopularGames">
             <div className="PopularGamesHeader Title">
@@ -142,6 +148,7 @@ function ListResults({searchQuery, minWidth}) {
                         key={idx}
                         game={game}
                         adState={adState}
+                        adId={nextAdId()}
                     />
                 })}
             </div>
@@ -188,6 +195,13 @@ function MoreGames({minWidth, searchQuery}) {
         games[i] = key;
         i++;
     }
+
+    var adId = 0;
+    function nextAdId(){
+        adId = adId + 1;
+        return adId;
+    }
+
   return (
       <div className="MoreGames">
           <div className="MoreGamesHeader">
@@ -199,6 +213,7 @@ function MoreGames({minWidth, searchQuery}) {
                       key={idx}
                       game={game}
                       adState={adState}
+                      adId={nextAdId()}
                   />
               })}
           </div>
