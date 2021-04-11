@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import Image from 'next/Image';
 import { useWindowSize, useAdState } from './hooks'
 
+const sideBar = 315;
 
 function gamepage({game}) {
 
@@ -15,7 +16,6 @@ function gamepage({game}) {
 	useWindowSize((newSize) => {
 		const {width} = newSize
 		const gameWidth = 800;
-		const sideBar = 320;
 		if (width >= gameWidth + sideBar*2) {
 			setNumEleGameRow(3)
 		}
@@ -27,16 +27,16 @@ function gamepage({game}) {
 		}
 	})
 
-
 	return (
 		<div className="GamePage" >
 		<div className="ContentDiv" >
 			{/* todo make this better based on numEle */}
-			{numEleGameRow === 3 ? (<>
-				<AdvertisementLeft/>
-				<SelectedGame game={game} />
-				<MoreGames game={game}/></>) : 
-				<SelectedGame game={game} />}
+				<>
+					{numEleGameRow >= 3 && <AdvertisementLeft/>}
+					<SelectedGame game={game} numEleGameRow={numEleGameRow} />
+					{numEleGameRow >= 2 && <MoreGames game={game}/>}
+				</>
+				
 		</div>
 		<style jsx global>
 			{`
@@ -51,8 +51,9 @@ function gamepage({game}) {
 }
 
 
-function SelectedGame({game}) {
-
+function SelectedGame({game, numEleGameRow}) {
+	// const {width: windowWidth} = useWindowSize()
+	// let iFrameWidth = windowWidth-((numEleGameRow-1)*320)-100
 
 	return (
 		<div className="SelectedGameContainer">
@@ -66,7 +67,7 @@ function SelectedGame({game}) {
 					left="0" 
 					frameBorder="0" 
 					scrolling="no" 
-					width="800"
+					width={"100%"}
 					height="660" 
 					allowFullScreen
 					webkitallowfullscreen
@@ -101,11 +102,14 @@ function SelectedGame({game}) {
 					.game-description {
 						position: center;
 						text-align: center;
-						padding-top: 60px;
-						padding-bottom: 120px;
+						margin: 20px;
+						padding: 30px;
+						margin-top: 60px;
+						margin-bottom: 120px;
+						background-color: var(--primaryShaded1);
+						border-radius: 10px;
 					}
 					.BathHack {
-						background-color: var(--primaryShaded1);
 						padding: 5px;
 						padding-top: 20px;
 						margin: 10px;
@@ -152,11 +156,8 @@ function MoreGames({game}) {
 			<style jsx>
 				{`
 					.MoreGames {
-						min-width: 100px;
-						position: absolute;
-						right: 0px;
-						padding-right: 10px;
-
+						width: 310px;
+						max-width: 310px;
 						background-color: var(--primaryShaded1);
 						padding: 5px;
 						padding-top: 20px;
@@ -186,17 +187,14 @@ function AdvertisementLeft(){
 			<style jsx>
 				{`
 					.Ad {
-					min-width: 100px;
-					position: absolute;
-					left: 14px;
-					padding-left: 10px;
+						padding-left: 10px;
 
-					background-color: var(--primaryShaded1);
-					padding: 5px;
-					padding-top: 20px;
-					margin: 10px;
-					border-radius: 10px;
-					height: fit-content;
+						background-color: var(--primaryShaded1);
+						padding: 5px;
+						padding-top: 20px;
+						margin: 10px;
+						border-radius: 10px;
+						height: fit-content;
 					}
 				`}
 			</style>

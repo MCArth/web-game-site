@@ -105,6 +105,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                         height: 157;
                         margin: 5px;
                         position:relative;
+                        cursor: pointer;
                     }
                 `}
             </style>
