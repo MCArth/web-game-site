@@ -5,7 +5,7 @@ import { useWindowSize, useAdState } from './hooks'
 import React, {useState} from 'react';
 import Link from 'next/link'
 
-function searchResults(search) {
+function SearchResults(search) {
     const {width: windowWidth} = useWindowSize()
     
     var foundResults = false;
@@ -19,8 +19,8 @@ function searchResults(search) {
 
 
     const minContentWidth = 315;
-    return <div className="LandingPage">
-        <div >
+    return <div className="SearchResults">
+        <div className="SearchContainer" >
             {foundResults ? (
                 <div>
                     <div className="ContentDiv">
@@ -33,9 +33,11 @@ function searchResults(search) {
                 </div>
             )}
         </div>
-        <div className="ContentDiv">
+        
+        <div className="SearchMoreGames">
             <MoreGames minWidth={minContentWidth} searchQuery={searchQuery}/>
         </div>
+
         {/*<Description />*/}
         <style jsx global>
             {`
@@ -50,7 +52,11 @@ function searchResults(search) {
                     color: white;
                     text-align: center;
                 }
-                .LandingPage {
+                .SearchContainer {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    min-width: ${minContentWidth};
                 }
                 .HeaderDiv {
                     width: 100%;
@@ -61,7 +67,12 @@ function searchResults(search) {
                     padding-top: 20px;
                     background-color: #1B1B1B;
                 }
-                .ResultsDiv{
+                .SearchResults{
+                    display: flex;
+                    height: fit-content;
+                    flex-wrap: ${windowWidth && document.body.clientWidth >= minContentWidth ? "" : "wrap"};
+                    flex-wrap: "wrap";
+
                     width: 100%;
                     font-size: 40px;
                     text-align: center;
@@ -77,7 +88,8 @@ function searchResults(search) {
                 .ContentDiv {
                     display: flex;
                     justify-content: center;
-                    flex-wrap: ${windowWidth && document.body.clientWidth >= minContentWidth*2 ? "" : "wrap"};
+                    flex-shrink: 0;
+                    width: 100%;
                 }
                 .searchResults {
                     width: 100%;
@@ -86,6 +98,11 @@ function searchResults(search) {
                     padding-bottom: 20px;
                     margin-bottom: 40px;
                     padding-top: 20px;
+                }
+                .SearchMoreGames {
+                    flex-shrink: 0;
+                    min-width: ${minContentWidth};
+                    width: ${minContentWidth};
                 }
                 .NoResultHeader {
                     text-align: center;
@@ -222,9 +239,7 @@ function MoreGames({minWidth, searchQuery}) {
           <style jsx>
               {`
                   .MoreGames {
-                    min-width: 100px;
-                    position: absolute;
-                    right: 0px;
+                    width: 320px;
                     padding-right: 10px;
 
                     background-color: var(--primaryShaded1);
@@ -249,5 +264,5 @@ function MoreGames({minWidth, searchQuery}) {
 }
 
 
-export default searchResults
+export default SearchResults
   
