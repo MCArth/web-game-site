@@ -36,7 +36,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                 if(!mouseIn){
                     onEnter(game);
                     try {
-                        document.getElementById('test').style.transform = 'scale(1.5,1.45)';
+                        document.getElementById('hoverPreview').style.transform = 'scale(1.5,1.45)';
                     } catch(e) {console.log(e)}
                     mouseIn = true;
                 }
@@ -57,12 +57,12 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                     height={advertHeight}
                 />
             }
-            {game===selectedGame &&
+            {(game===selectedGame && gameList[game].video != 'no video') &&
                 <video 
-                    className="GameAdvertVideo"
+                    className="GameAdvertPreview"
                     src={`/${gameList[game].video}`}
-                    id='test'
                     autoPlay
+                    id='hoverPreview'
                     muted
                     loop
                     preload='none'
@@ -70,14 +70,25 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                     height={advertHeight}
                 />
             }
+            {(game===selectedGame && gameList[game].video == 'no video') &&
+                <Image
+                className="GameAdvertPreview"
+                src={`/${gameList[game].image}`}
+                alt={`Image of ${game}`}
+                id='hoverPreview'
+                width={advertWidth}
+                height={advertHeight}
+            />
+            }
             <style jsx global>
                 {`
                     .GameAdvertImage {
                         width: 275;
                         height: 157;
                         border-radius: 10px;
+                        position:relative;
                     }
-                    .GameAdvertVideo {
+                    .GameAdvertPreview {
                             width: 275;
                             height: 157;
                             border-radius: 10px;
@@ -93,6 +104,11 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                         width: 275;
                         height: 157;
                         margin: 5px;
+                        border: solid;
+                        border-color: #FFFFFF;
+                        border-radius: 10px;
+                        border-width: 2px;
+                        position:relative;
                     }
                 `}
             </style>

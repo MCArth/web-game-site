@@ -39,6 +39,7 @@ function PopularGames({minWidth}) {
     games[6] = ('CraftNiteIO');
     games[7] = ('KogamaSkyLand');
     games[8] = ('MineBlocks');
+    games[9] = ('MinecraftTowerDefence');
 
     return (
         <div className="PopularGames">
