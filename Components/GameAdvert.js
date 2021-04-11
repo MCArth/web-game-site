@@ -9,8 +9,6 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
     const advertHeight = 157;
     var mouseIn = false;
 
-    console.log(game===selectedGame);
-
     /*
     if(game===selectedGame){
         expandVideo();
@@ -92,10 +90,9 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                             width: 275;
                             height: 157;
                             border-radius: 10px;
-                            z-index: 1000;
+                            z-index: 1;
                             position:relative;
                             transition: all 0.25s;
-                            box-sizing: border-box;
                             border: solid;
                             border-color: #21C59D;
                             background-color: #000000;
