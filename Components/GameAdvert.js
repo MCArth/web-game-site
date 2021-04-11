@@ -36,7 +36,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                 if(!mouseIn){
                     onEnter(game);
                     try {
-                    document.getElementById('test').style.transform = 'scale(1.5,1.45)';
+                        document.getElementById('test').style.transform = 'scale(1.5,1.45)';
                     } catch(e) {console.log(e)}
                     mouseIn = true;
                 }

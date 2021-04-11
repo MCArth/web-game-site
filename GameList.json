@@ -17,7 +17,7 @@
     
     "IslandSurvival": {
         "title": "The Island Survival",
-        "image": "bloxdhop275x157.png",
+        "image": "theislandsurvival.jpg",
         "video": "bloxdhopthumbnail.mp4",
         "url": "https://www.gameflare.com/embed/the-island-survival/",
         "desc": "The Island Survival is an action online game where you’ll be fighting for your life. You find yourselves alone in a small hut in the middle of nowhere. If you want to survive, you’ll have to find food and secure all of the resources you need to survive. You’re lucky, since there’s a ton of wild-life running around. It’s not always easy to hunt them down, but if you want to eat, you’ll have to try. You can also gather resources that you find on the ground. You can make tools out of them and build defenses and other structures. During the day, the surroundings are safe, but during night time, you better run hide in your hut, else feral animals might hunt you down. Enjoy this great game, where you’ll be playing on a deserted island!"
@@ -25,7 +25,7 @@
 
     "MineBox": {
         "title": "Mine Box",
-        "image": "bloxdhop275x157.png",
+        "image": "minebox.jpg",
         "video": "bloxdhopthumbnail.mp4",
         "url": "https://www.gameflare.com/embed/mine-box/",
         "desc": "Today, we are offering you an interesting online game that is heavily based on Minecraft. However, there’s one giant difference, the game is in 2D. But aside from that, you can build whatever you want around yourself. You simply need to get rid of some blocks and add a few other ones. You can also dig underground and explore that way. So start playing!"
@@ -33,26 +33,50 @@
 
     "BlockWorld": {
         "title": "Block World",
-        "image": "bloxdhop275x157.png",
-        "video": "bloxdhopthumbnail.mp4",
+        "image": "blockworld.jpg",
+        "video": "blockworldthumbnail.mp4",
         "url": "https://www.gameflare.com/embed/block-world/",
         "desc": "In this game, you need to do whatever you can to build your own village. There’s a whole unexplored world waiting for you, so be sure to explore it! Collect all of the blocks you can and build up your own Minecraft universe. Enjoy hours of building and fighting to protect your hard-earned soil. Don’t let anyone distract you and enjoy the game!"
     },
 
     "MineClone": {
         "title": "Mine Clone",
-        "image": "bloxdhop275x157.png",
-        "video": "bloxdhopthumbnail.mp4",
+        "image": "mineclone.jpg",
+        "video": "mineclonethumbnail.mp4",
         "url": "https://www.gameflare.com/embed/mine-clone/",
         "desc": "There are not many people who do not know Minecraft. From now on you will be able to play its copy which, unfotunately, does not offer so many cool things as the original but you can also change the country according to your taste. Have fun !"
     },
 
     "MineCraftIO": {
         "title": "Mine-Craft.io",
-        "image": "bloxdhop275x157.png",
+        "image": "mine-craft.jpg",
         "video": "bloxdhopthumbnail.mp4",
         "url": "https://www.gameflare.com/embed/mine-craft-io/",
         "desc": "Mine-Craft.io is a multiplayer game in the Minecraft theme. Your objective is to build the world around you with blocks. The main difference is that the game is in 2D graphics, so building is much easier. You can build whatever you want. All you need to do is pick the right blocks from your inventory. Aside from that the game is also offering many strange items, such as portals that allow you to move very quickly around the map. In the middle of the map, there is a safe zone, where you cannot be harmed. When you get out of this zone, you should be alert, since you can be attacked at any moment!"
+    },
+
+    "CraftNiteIO": {
+        "title": "CraftNite.io",
+        "image": "craftniteio.jpg",
+        "video": "bloxdhopthumbnail.mp4",
+        "url": "https://www.gameflare.com/embed/craftnite-io/",
+        "desc": "Craftnite.io is an online game where you’ll be playing against opponents from all around the world. All you need to do is pick a name and log into a server. The game is offering you 3D graphics in the style of Minecraft, the game also lets you build around your environment. Your main objective will be to kill as many enemies as you can and thus get to the top of the score board. Only one mode is available at the moment – Free for all. Each player for himself. Aside from that, there is a lot of skins available, so you can pick one at the beginning. Don’t forget that!"
+    },
+
+    "KogamaSkyLand": {
+        "title": "Kogama: Minecraft Sky Land",
+        "image": "kogamaskyland.jpg",
+        "video": "bloxdhopthumbnail.mp4",
+        "url": "https://www.gameflare.com/embed/kogama-minecraft-sky-land/",
+        "desc": "Here’s yet another 3D online game from the world of Kogama where you won’t be playing as anyone special, but rather as a guy trying to collect bricks and then using these to build up the world around him. It’s very similar to Minecraft, so if you like that game, it’s very likely that you’ll like this one also. Since this is a multiplayer game, you are playing against other players that can build with you. It’s more fun if you’re building with friends. You can show your friends what you’ve come up with and what you’ve build up! You can brag a bit in the comments!"
+    },
+
+    "MineBlocks": {
+        "title": "Mine Blocks",
+        "image": "mineblocks.webp",
+        "video": "mineblocksthumbnail.mp4",
+        "url": "https://www.gameflare.com/embed/mine-blocks/",
+        "desc": "This is a really cool game similar to Minecraft. Build anything you want in this great online game. You must get enough food and also build your house. You will have lots of fun. Make sure not to lose too many lives. If you don't want to start again every time, you can save your world and play in it later."
     }
 
 
