@@ -37,7 +37,7 @@ export default function GenericPage({title, children, headerIsClickable}) {
             )}
             <div className="SearchBar">
               <input className="inputSearch" placeholder={"Search for a game.."} type="text" onChange={getSearchData}/>
-              <Link href={`/search/${encodeURIComponent(searchData)}`}> 
+              <Link href={`/search?query=${encodeURIComponent(searchData)}`}> 
                 <button className="searchButton" type="submit" onClick={()=>setSearch(true)} >Search</button>
               </Link>
             </div>

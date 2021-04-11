@@ -1,11 +1,11 @@
 import GameAdvert from './GameAdvert';
 import gameList from '../GameList.json'
 import Description from './Description';
-import { useWindowSize } from './hooks'
+import { useWindowSize, useAdState } from './hooks'
 import React, {useState} from 'react';
 import Link from 'next/link'
 
-function searchResults({searchQuery}) {
+function SearchResults({search}) {
     const {width: windowWidth} = useWindowSize()
 
     /*const [searchData, setSearchData] = useState(null);
@@ -17,7 +17,7 @@ function searchResults({searchQuery}) {
 
     // TODO: Pass-through props-value and assign it to searchQuery
 
-    console.log(searchQuery);
+    console.log(search);
 
 
     var foundWord = false;
@@ -41,7 +41,7 @@ function searchResults({searchQuery}) {
         </div>
         <div className="ContentDiv">
             {/*<PopularGames minWidth={minContentWidth} />*/}
-            <listResults searchQuery={searchQuery} />
+            <ListResults searchQuery={search} />
             <MoreGames minWidth={minContentWidth} />
         </div>
         {/*<Description />*/}
@@ -79,7 +79,7 @@ function searchResults({searchQuery}) {
     </div>
 }
 
-function listResults({searchQuery}){
+function ListResults({searchQuery}){
     // Loop through all games we have and check if searchquery is in the list
     //if (gameList.inclues(searchQuery.toLowerCase())){
     //    foundResults=true;
@@ -224,5 +224,5 @@ function MoreGames({}) {
 }
 
 
-export default searchResults
+export default SearchResults
   
