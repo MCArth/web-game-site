@@ -135,6 +135,12 @@ function MoreGames({game}) {
         i++;
     }
 
+    var adId = 0;
+    function nextAdId(){
+        adId = adId + 1;
+        return adId;
+    }
+
 	return (
 		<div className="MoreGames">
 			<div className="MoreGamesHeader">
@@ -146,6 +152,7 @@ function MoreGames({game}) {
 						key={idx}
 						game={game}
             			adState={adState}
+                        adId={nextAdId()}
 					/>
 				})}
 			</div>

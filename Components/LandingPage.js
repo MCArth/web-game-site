@@ -45,7 +45,11 @@ function PopularGames({minWidth}) {
         i++;
     }
 
-
+    var adId = 0;
+    function nextAdId(){
+        adId = adId + 1;
+        return adId;
+    }
 
     return (
         <div className="PopularGames">
@@ -58,6 +62,7 @@ function PopularGames({minWidth}) {
                         key={idx}
                         game={game}
                         adState={adState}
+                        adId={nextAdId()}
                     />
                 })}
             </div>
@@ -105,6 +110,12 @@ function NewGames({minWidth}) {
         i++;
     }
 
+    var adId = 0;
+    function nextAdId(){
+        adId = adId + 1;
+        return adId;
+    }
+
     return (
         <div className="NewGames">
             <div className="NewGamesHeader Title">
@@ -116,6 +127,7 @@ function NewGames({minWidth}) {
                         key={idx}
                         game={game}
                         adState={adState}
+                        adId={nextAdId()}
                     />
                 })}
             </div>

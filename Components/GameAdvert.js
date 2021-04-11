@@ -3,7 +3,7 @@ import gameList from '../GameList.json'
 import React, { useState } from 'react';
 import Link from 'next/link'
 
-function GameAdvert({game, adState:[onEnter, selectedGame]}) {
+function GameAdvert({game, adState:[onEnter, selectedGame], adId}) {
 
     const advertWidth = 275;
     const advertHeight = 157;
@@ -27,12 +27,14 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
     }
     */
 
+    console.log(adId);
+
     return (
     <Link href={`/${encodeURIComponent(game)}`} >
         <div className="GameDiv"
             onMouseOverCapture={() => {
                 if(!mouseIn){
-                    onEnter(game);
+                    onEnter(adId);
                     try {
                         document.getElementById('hoverPreview').style.transform = 'scale(1.5,1.45)';
                     } catch(e) {console.log(e)}
@@ -46,7 +48,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                 }
             }}
         > 
-            {game!==selectedGame &&
+            {adId!==selectedGame &&
                 <Image
                     className="GameAdvertImage"
                     src={`/${gameList[game].image}`}
@@ -55,7 +57,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                     height={advertHeight}
                 />
             }
-            {(game===selectedGame && gameList[game].video != 'no video') &&
+            {(adId===selectedGame && gameList[game].video != 'no video') &&
                 <video 
                     className="GameAdvertPreview"
                     src={`/${gameList[game].video}`}
@@ -68,7 +70,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                     height={advertHeight}
                 />
             }
-            {(game===selectedGame && gameList[game].video == 'no video') &&
+            {(adId===selectedGame && gameList[game].video == 'no video') &&
                 <img
                     className="GameAdvertPreview"
                     src={`/${gameList[game].image}`}
@@ -84,9 +86,6 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                         width: 275;
                         height: 157;
                         border-radius: 10px;
-                        border: solid;
-                        border-color: #FFFFFF;
-                        border-width: 2px;
                         position:relative;
                     }
                     .GameAdvertPreview {
@@ -105,6 +104,10 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                         height: 157;
                         margin: 5px;
                         position:relative;
+                        border: solid;
+                        border-color: #FFFFFF;
+                        border-radius: 10px;
+                        border-width: 2px;
                     }
                 `}
             </style>
