@@ -69,13 +69,13 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                 />
             }
             {(game===selectedGame && gameList[game].video == 'no video') &&
-                <Image
-                className="GameAdvertPreview"
-                src={`/${gameList[game].image}`}
-                alt={`Image of ${game}`}
-                id='hoverPreview'
-                width={advertWidth}
-                height={advertHeight}
+                <img
+                    className="GameAdvertPreview"
+                    src={`/${gameList[game].image}`}
+                    alt={`Image of ${game}`}
+                    id='hoverPreview'
+                    width={advertWidth}
+                    height={advertHeight}
             />
             }
             <style jsx global>
@@ -84,27 +84,26 @@ function GameAdvert({game, adState:[onEnter, selectedGame]}) {
                         width: 275;
                         height: 157;
                         border-radius: 10px;
+                        border: solid;
+                        border-color: #FFFFFF;
+                        border-width: 2px;
                         position:relative;
                     }
                     .GameAdvertPreview {
-                            width: 275;
-                            height: 157;
-                            border-radius: 10px;
-                            z-index: 1;
-                            position:relative;
-                            transition: all 0.25s;
-                            border: solid;
-                            border-color: #21C59D;
-                            background-color: #000000;
+                        width: 275;
+                        height: 157;
+                        border-radius: 10px;
+                        z-index: 1;
+                        position:relative;
+                        transition: all 0.25s;
+                        border: solid;
+                        border-color: #21C59D;
+                        background-color: #000000;
                     }
                     .GameDiv {
                         width: 275;
                         height: 157;
                         margin: 5px;
-                        border: solid;
-                        border-color: #FFFFFF;
-                        border-radius: 10px;
-                        border-width: 2px;
                         position:relative;
                     }
                 `}
