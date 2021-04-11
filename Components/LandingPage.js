@@ -37,7 +37,7 @@ function PopularGames({minWidth}) {
     var i = 0;
     var firstRun = true;
     for (var key of Object.keys(gameList)) {
-        if (firstRun){
+        if (firstRun || i>=50){
             firstRun = false;
             continue;
         }
@@ -97,7 +97,7 @@ function NewGames({minWidth}) {
     var i = 0;
     var firstRun = true;
     for (var key of Object.keys(gameList)) {
-        if (firstRun){
+        if (firstRun || i>=10){
             firstRun = false;
             continue;
         }

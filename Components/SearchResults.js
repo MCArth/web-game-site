@@ -92,19 +92,38 @@ function listResults({searchQuery}){
 
 function PopularGames({minWidth}) {
     
-    var length = 9;
-    const games = new Array(length).fill('Default')
-    for (var i = 0; i < length; i++) {
-        games[i] = gameList[i+1]; //('');
+    var length = 50;
+    const gamesInit = new Array(length).fill('Default');
+    const adState = useAdState();
+    var searchTerm = "i";
+    
+    var i = 0;
+    var firstRun = true;
+    for (var key of Object.keys(gameList)) {
+        if (firstRun){
+            firstRun = false;
+            continue;
+        }
+        if (key.toLowerCase().includes(searchTerm.toLowerCase())){
+            gamesInit[i] = key;
+            i++;
+            console.log('yes');
+        }
     }
 
-    // Need a way to loop through and add all existing games from GameList.json
-    /*games[0] = ('BloxdHop');
-    games[1] = ('IslandSurvival');
-    games[2] = ('MineBox');
-    games[3] = ('BlockWorld');
-    games[4] = ('MineClone');
-    games[5] = ('MineCraftIO');*/
+    // Find length
+    var arrayLength = 0;
+    for (arrayLength; i < gamesInit.length; i++){
+        if (gamesInit[arrayLength]=='Default'){
+            continue;
+        }
+        arrayLength++;
+    }
+
+    const games = new Array(arrayLength);
+    for (var i = 0; i < arrayLength; i++){
+        games[i] = gamesInit[i];
+    }
 
     return (
         <div className="PopularGames">
