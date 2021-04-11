@@ -27,7 +27,6 @@ function GameAdvert({game, adState:[onEnter, selectedGame], adId}) {
     }
     */
 
-    console.log(adId);
 
     return (
     <Link href={`/${encodeURIComponent(game)}`} >
@@ -37,7 +36,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame], adId}) {
                     onEnter(adId);
                     try {
                         document.getElementById('hoverPreview').style.transform = 'scale(1.5,1.45)';
-                    } catch(e) {console.log(e)}
+                    } catch(e) {console.error(e)}
                     mouseIn = true;
                 }
             }}
@@ -104,10 +103,6 @@ function GameAdvert({game, adState:[onEnter, selectedGame], adId}) {
                         height: 157;
                         margin: 5px;
                         position:relative;
-                        border: solid;
-                        border-color: #FFFFFF;
-                        border-radius: 10px;
-                        border-width: 2px;
                         cursor: pointer;
                     }
                 `}
