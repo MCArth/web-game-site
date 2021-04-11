@@ -28,12 +28,6 @@ function searchResults({searchQuery}) {
             <div className="Header">
                 Mine and Craft Games .com
             </div>
-            <div className="SearchBar">
-                <input placeholder={"Search for a game.."} type="text" onChange={getSearchData}/>
-                <Link href={`/search/${encodeURIComponent(searchData)}`}> 
-                    <button type="submit" onClick={()=>setSearch(true)} >Search</button>
-                </Link>
-            </div>
         </div>
         <div className="ContentDiv">
             {/*<PopularGames minWidth={minContentWidth} />*/}

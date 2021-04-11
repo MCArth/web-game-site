@@ -36,9 +36,9 @@ export default function GenericPage({title, children, headerIsClickable}) {
                 </div>
             )}
             <div className="SearchBar">
-              <input placeholder={"Search for a game.."} type="text" onChange={getSearchData}/>
+              <input className="inputSearch" placeholder={"Search for a game.."} type="text" onChange={getSearchData}/>
               <Link href={`/search/${encodeURIComponent(searchData)}`}> 
-                <button type="submit" onClick={()=>setSearch(true)} >Search</button>
+                <button className="searchButton" type="submit" onClick={()=>setSearch(true)} >Search</button>
               </Link>
             </div>
             {children}
@@ -69,9 +69,40 @@ export default function GenericPage({title, children, headerIsClickable}) {
                 background-color: #1B1B1B;
                 ${headerIsClickable ? "cursor: pointer;" : ""}
               }
+
               .SearchBar {
                 padding-bottom: 20px;
               }
+              .SearchBar .inputSearch{
+                margin: 0 10px 0 0;
+                box-shadow: 0 0 20px 0 var(--primaryShaded1);
+                width: 25%;
+                border: none;
+                outline: none;
+                height: 60px;
+                font-size: 20px;
+                border-radius: 14px;
+                padding: 8px;
+              }
+              .SearchBar .inputSearch:hover{
+                box-shadow: 0 0 20px 0 black;
+              }
+              .SearchBar .searchButton {
+                box-shadow: 0 0 12px 0 var(--primaryShaded1);
+                background: var(--primaryShaded1);
+                height: 60px;
+                font-size: 20px;
+                padding: 10px 20px;
+                border: none;
+                outline: none;
+                border-radius: 14px;
+                color: white;
+              }
+              .SearchBar .searchButton:hover {
+                box-shadow: 0 0 12px 0 black;
+                cursor: pointer;
+              }
+
               {/* h1 {
                     --shadowColour: rgb(0, 120, 189);
                     font-family: pixel-font;
