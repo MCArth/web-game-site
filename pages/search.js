@@ -1,5 +1,5 @@
 import gameList from '../GameList.json';
-import SearchResults from '../Components/searchResults';
+import SearchResults from '../Components/SearchResults';
 import GenericPage from '../Components/GenericPage';
 import { useEffect, useState } from 'react';
 import queryString from 'query-string'
