@@ -23,16 +23,13 @@ function searchResults(search) {
         <div >
             {foundResults ? (
                 <div>
-                    <div className="ResultsDiv">
-                        Results for: {searchQuery}
-                    </div>
                     <div className="ContentDiv">
                         <ListResults searchQuery={searchQuery} minWidth={minContentWidth}/>
                     </div> 
                 </div>
             ) : (
-                <div className="ResultsDiv">
-                    Could not find any results for: {searchQuery}
+                <div className="NoResultHeader Title">
+                    Could not find any results for: <code>{searchQuery}</code>
                 </div>
             )}
         </div>
@@ -90,6 +87,11 @@ function searchResults(search) {
                     margin-bottom: 40px;
                     padding-top: 20px;
                 }
+                .NoResultHeader {
+                    text-align: center;
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
             `}
         </style>
     </div>
@@ -140,7 +142,7 @@ function ListResults({searchQuery, minWidth}) {
     return (
         <div className="PopularGames">
             <div className="PopularGamesHeader Title">
-            Search results for {searchQuery}
+            Results for: <code>{searchQuery}</code>
             </div>
             <div className="PopularGamesAdverts">
                 {games.map((game, idx) => {
