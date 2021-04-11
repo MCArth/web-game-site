@@ -2,7 +2,7 @@ import GameAdvert from '../Components/GameAdvert';
 import Link from 'next/link'
 import gameList from '../GameList.json'
 import React, { useState } from 'react';
-import Image from 'next/Image';
+import Image from 'next/image';
 import { useWindowSize, useAdState } from './hooks'
 
 const sideBar = 315;
