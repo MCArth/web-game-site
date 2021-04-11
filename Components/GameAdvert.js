@@ -108,6 +108,7 @@ function GameAdvert({game, adState:[onEnter, selectedGame], adId}) {
                         border-color: #FFFFFF;
                         border-radius: 10px;
                         border-width: 2px;
+                        cursor: pointer;
                     }
                 `}
             </style>

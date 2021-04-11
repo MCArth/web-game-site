@@ -8,19 +8,25 @@
     },
     
     "BloxdHop": {
-        "title": "BloxdHop",
+        "title": "BloxdHop.io",
         "image": "bloxdhop275x157.png",
         "video": "bloxdhopthumbnail.mp4",
         "url": "https://bloxdhop.io",
-        "desc": "About this game.. Dunno"
+        "desc": "BloxdHop is a crazy game where the goal is crazily simple. There is a single mechanic in this game. Hopping. Hop your way to the end of the map to claim your crown as the best of the hoppers."
     },
-    
-    "IslandSurvival": {
-        "title": "The Island Survival",
-        "image": "theislandsurvival.jpg",
+    "DoodleCube": {
+        "title": "DoodleCube.io",
+        "image": "DoodleCube275x157.jpg",
+        "video": "DoodleCubeVid.mp4",
+        "url": "https://doodlecube.io",
+        "desc": "DoodleCube is a fun and exciting game where you build as part of a competition. It's a build to the death. Build the best build you possibly can and vote on the other players builds!"
+    },
+    "EvilTower": {
+        "title": "EvilTower.io",
+        "image": "eviltower275x157.png",
         "video": "no video",
-        "url": "https://www.gameflare.com/embed/the-island-survival/",
-        "desc": "The Island Survival is an action online game where you’ll be fighting for your life. You find yourselves alone in a small hut in the middle of nowhere. If you want to survive, you’ll have to find food and secure all of the resources you need to survive. You’re lucky, since there’s a ton of wild-life running around. It’s not always easy to hunt them down, but if you want to eat, you’ll have to try. You can also gather resources that you find on the ground. You can make tools out of them and build defenses and other structures. During the day, the surroundings are safe, but during night time, you better run hide in your hut, else feral animals might hunt you down. Enjoy this great game, where you’ll be playing on a deserted island!"
+        "url": "https://eviltower.io",
+        "desc": "Evil Tower is an amazing game where you race your way up a tower with 10 whole levels. There are no checkpoints here, so make sure not to fall to your death!"
     },
 
     "MineBox": {
