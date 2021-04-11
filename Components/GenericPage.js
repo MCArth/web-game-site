@@ -48,10 +48,6 @@ export default function GenericPage({title, children, headerIsClickable}) {
               .root {
                 background-color: #333333;
               }
-              @font-face {
-                font-family: pixel-font;
-                src: url('/PixelIntv-OPxd.ttf');
-              }
               .Title {
                   font-family: pixel-font;
               }
