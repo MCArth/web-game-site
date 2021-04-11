@@ -36,7 +36,9 @@ function GameAdvert({game, adState:[onEnter, selectedGame], adId}) {
                     onEnter(adId);
                     try {
                         document.getElementById('hoverPreview').style.transform = 'scale(1.5,1.45)';
-                    } catch(e) {console.error(e)}
+                    } catch(e) {
+                        // console.error(e)
+                    }
                     mouseIn = true;
                 }
             }}
